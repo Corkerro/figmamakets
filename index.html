@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <!-- <style>body{opacity: 0;}</style> -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20230718190439" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20230721200417" />
     <link rel="shortcut icon" href="favicon.ico" />
     <!-- <meta name="robots" content="noindex, nofollow"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -178,8 +178,8 @@
         <div class="popular">
           <div class="popular__container">
             <h4 class="subtitle">Самое популярное</h4>
-            <div data-spollers class="popular__spollers">
-              <div class="popular__spollers_item">
+            <div data-spollers data-one-spoller class="popular__spollers">
+              <div class="popular__spollers_item spollers__item">
                 <button type="button" data-spoller class="popular__spollers_title">
                   <div class="popular__spollers-number-bold">01</div>
                   <h3>Макет лендинга для системы блокчейн<span></span></h3>
@@ -209,7 +209,7 @@
                   </div>
                 </div>
               </div>
-              <div class="popular__spollers_item">
+              <div class="popular__spollers_item spollers__item">
                 <button type="button" data-spoller class="popular__spollers_title">
                   <div class="popular__spollers-number-bold">02</div>
                   <h3>Макет лендинга по организации экскурсий<span></span></h3>
@@ -239,7 +239,7 @@
                   </div>
                 </div>
               </div>
-              <div class="popular__spollers_item">
+              <div class="popular__spollers_item spollers__item">
                 <button type="button" data-spoller class="popular__spollers_title">
                   <div class="popular__spollers-number-bold">03</div>
                   <h3>Макет лендинга для университета<span></span></h3>
@@ -269,7 +269,7 @@
                   </div>
                 </div>
               </div>
-              <div class="popular__spollers_item">
+              <div class="popular__spollers_item spollers__item">
                 <button type="button" data-spoller class="popular__spollers_title">
                   <div class="popular__spollers-number-bold">04</div>
                   <h3>Макет лендинга для SEO студии<span></span></h3>
@@ -299,7 +299,7 @@
                   </div>
                 </div>
               </div>
-              <div class="popular__spollers_item">
+              <div class="popular__spollers_item spollers__item">
                 <button type="button" data-spoller class="popular__spollers_title">
                   <div class="popular__spollers-number-bold">05</div>
                   <h3>Макет магазина по продаже военной одежды<span></span></h3>
@@ -476,7 +476,7 @@
           <div class="faq__container">
             <h4 class="subtitle">FAQ</h4>
             <div data-spollers class="faq__spollers">
-              <div class="faq__spollers_item">
+              <div class="faq__spollers_item spollers__item">
                 <button type="button" data-spoller class="faq__spollers_title">
                   <h3>А это бесплатно?<span></span></h3>
                 </button>
@@ -485,7 +485,7 @@
                   развивать свои навыки без дополнительных затрат.
                 </div>
               </div>
-              <div class="faq__spollers_item">
+              <div class="faq__spollers_item spollers__item">
                 <button type="button" data-spoller class="faq__spollers_title">
                   <h3>Должен ли я отметить автора?<span></span></h3>
                 </button>
@@ -498,7 +498,7 @@
                   >. Мы ценим признание и поддержку нашей работы.
                 </div>
               </div>
-              <div class="faq__spollers_item">
+              <div class="faq__spollers_item spollers__item">
                 <button type="button" data-spoller class="faq__spollers_title">
                   <h3>Сколько по времени займет верстка?<span></span></h3>
                 </button>
@@ -509,7 +509,7 @@
                   уникален и может потребовать больше или меньше времени.
                 </div>
               </div>
-              <div class="faq__spollers_item">
+              <div class="faq__spollers_item spollers__item">
                 <button type="button" data-spoller class="faq__spollers_title">
                   <h3>Могу ли я переделать макет?<span></span></h3>
                 </button>
@@ -519,7 +519,7 @@
                   настраивать его, изменять элементы и приспосабливать под свои потребности.
                 </div>
               </div>
-              <div class="faq__spollers_item">
+              <div class="faq__spollers_item spollers__item">
                 <button type="button" data-spoller class="faq__spollers_title">
                   <h3>Как скопировать макет себе?<span></span></h3>
                 </button>
@@ -532,9 +532,111 @@
             </div>
           </div>
         </div>
+        <div class="contacts">
+          <div class="contacts__container">
+            <h4 class="subtitle">Наши контакты</h4>
+            <div class="contacts__content">
+              <p class="text-1">
+                Если ты хочешь связаться с нами, напиши сюда свои данные.<br
+                  class="contacts__br"
+                />Мы свяжемся с тобой в ближайшее время
+              </p>
+              <form class="contacts__form" action="">
+                <div class="contacts__form_inputs">
+                  <div class="contacts__form_top">
+                    <input type="text" class="contacts__form_name" placeholder="Имя" />
+                    <input type="text" class="contacts__form_surname" placeholder="Фамилия" />
+                  </div>
+                  <input type="text" class="contacts__form_telegram" placeholder="Telegram" />
+                </div>
+                <div class="contacts__form_checkbox checkbox">
+                  <input
+                    id="c_1"
+                    data-error="Ошибка"
+                    class="checkbox__input"
+                    type="checkbox"
+                    value="1"
+                    name="form[]"
+                  />
+                  <label for="c_1" class="checkbox__label"
+                    ><span class="checkbox__text"
+                      >Я согласен(на) с политикой конфиденциальности</span
+                    ></label
+                  >
+                </div>
+                <button type="submit" class="submit-button button disabled">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </main>
       <footer class="footer">
-        <div class="footer__container"></div>
+        <picture
+          ><source srcset="img/Trust.svg" type="image/webp" />
+          <img src="img/Trust.svg" alt="" class="footer__bg"
+        /></picture>
+        <div class="footer__container">
+          <div class="footer__marquee">
+            <div class="footer__marquee_wrapper">
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+              <div class="footer__marquee_item">
+                <span class="stroke-text">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</span>
+                <img src="img/main/portal.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="footer__content">
+            <ul>
+              <li class="li"><a href="#">Privacy policy</a></li>
+              <li class="li"><a href="#">Cookie policy</a></li>
+              <li class="li"><a href="#">Legal notice</a></li>
+            </ul>
+            <img src="img/Design by Violetta Gobozova.svg" alt="" />
+          </div>
+        </div>
       </footer>
     </div>
     <div id="popup" aria-hidden="true" class="popup">
@@ -545,7 +647,7 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js?_v=20230718190439"></script>
-    <script src="js/app.min.js?_v=20230718190439"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js?_v=20230721200417"></script>
+    <script src="js/app.min.js?_v=20230721200417"></script>
   </body>
 </html>

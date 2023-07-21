@@ -168,12 +168,14 @@
                 const el = e.target;
                 if (el.closest("[data-spoller]")) {
                     const spollerTitle = el.closest("[data-spoller]");
+                    const spollerItem = el.closest(".spollers__item");
                     const spollersBlock = spollerTitle.closest("[data-spollers]");
                     const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
                     const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
                     if (!spollersBlock.querySelectorAll("._slide").length) {
                         if (oneSpoller && !spollerTitle.classList.contains("_spoller-active")) hideSpollersBody(spollersBlock);
                         spollerTitle.classList.toggle("_spoller-active");
+                        if (spollerItem) spollerItem.classList.toggle("_open");
                         _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
                     }
                     e.preventDefault();
@@ -3827,13 +3829,6 @@
             popularItemsImgs[i].style.transform = "scale(1)";
         }));
     }
-    const faqItems = document.querySelectorAll(".faq__spollers_item");
-    faqItems.forEach((element => {
-        const title = element.querySelector(".faq__spollers_title");
-        title.addEventListener("click", (() => {
-            if (!title.classList.contains("_spoller-active")) element.classList.add("_open"); else element.classList.remove("_open");
-        }));
-    }));
     document.querySelector("[data-bufer]").addEventListener("click", (function() {
         var textToCopy = this.getAttribute("data-bufer");
         var clipboard = new ClipboardJS(this, {
@@ -3855,6 +3850,26 @@
             clipboard.destroy();
         }));
         clipboard.onClick(event);
+    }));
+    const checkboxBlocks = document.querySelectorAll(".contacts__form");
+    checkboxBlocks.forEach((block => {
+        const checkbox = block.querySelector(".checkbox__input");
+        const submitButton = block.querySelector(".submit-button");
+        checkbox.addEventListener("change", (function() {
+            if (checkbox.checked) {
+                submitButton.classList.remove("disabled");
+                checkbox.classList.remove("error");
+            } else submitButton.classList.add("disabled");
+        }));
+        block.addEventListener("submit", (function(event) {
+            if (!checkbox.checked) {
+                event.preventDefault();
+                checkbox.classList.add("error");
+                setTimeout((() => {
+                    checkbox.classList.remove("error");
+                }), 2e3);
+            }
+        }));
     }));
     window["FLS"] = true;
     isWebp();
