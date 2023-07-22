@@ -850,10 +850,6 @@ h3 {
   left: 150px;
 }
 
-.main {
-  min-height: 100vh;
-}
-
 @supports (margin-top: clamp( 5rem , 4.512195122rem  +  2.4390243902vw , 6.875rem )) {
   .main {
     margin-top: clamp( 5rem , 4.512195122rem  +  2.4390243902vw , 6.875rem );
