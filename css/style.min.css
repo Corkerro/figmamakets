@@ -187,7 +187,7 @@ body {
   height: 10px;
   top: 5px;
   left: 5px;
-  background: url(../img/checkbox.svg) center no-repeat;
+  background: url('../img/checkbox.svg') center no-repeat;
   scale: 0;
   -webkit-transition: scale 0.3s ease;
   transition: scale 0.3s ease;
